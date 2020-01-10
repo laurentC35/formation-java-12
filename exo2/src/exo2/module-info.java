@@ -1,0 +1,2 @@
+module exo2 {
+}
