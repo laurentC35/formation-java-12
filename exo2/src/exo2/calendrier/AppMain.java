@@ -2,8 +2,11 @@ package exo2.calendrier;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.logging.Logger;
 
 public class AppMain {
+	
+	static Logger logger = Logger.getLogger("exo2.calendrier.AppMain");
 
 	public static void main(String[] args) {
 		if(args.length == 3) {
@@ -15,9 +18,9 @@ public class AppMain {
 			LocalDate birthday = LocalDate.of(year, month, dayOfMonth);
 			LocalDate today = LocalDate.now();
 			Period period = Period.between(birthday, today);
-			System.out.println("age = "+period.getYears()+" ans !");
+			logger.info("age = "+period.getYears()+" ans !");
 		} else {
-			System.err.println("USAGE :java --module exo2.calendrier.AppMain <jour> <mois> <annee>");
+			logger.severe("USAGE :java --module exo2.calendrier.AppMain <jour> <mois> <annee>");
 		}
 
 	}

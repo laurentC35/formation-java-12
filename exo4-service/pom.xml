@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.insee.lille</groupId>
+		<artifactId>exo4-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>exo4-service</artifactId>
+
+	<name>${project.artifactId}</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>fr.insee.lille</groupId>
+			<artifactId>exo4-persistence</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<configuration>
+					<executable>java</executable>
+					<mainClass>fr.java.service.AppMain</mainClass>
+					<arguments>
+						<argument>--module-path</argument>
+						<argument>${output.dir}</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
