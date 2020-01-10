@@ -6,6 +6,10 @@ public class Contact {
 	protected String name;
 	protected String prenom;
 	
+	@Override
+	public String toString() {
+		return "Contact [id=" + id + ", name=" + name + ", prenom=" + prenom + "]";
+	}
 	public Contact(Integer id, String name, String prenom) {
 		super();
 		this.id = id;
